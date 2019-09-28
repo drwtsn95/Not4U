@@ -1,7 +1,7 @@
 from task1 import MyList, numberToList
 def main():
-    l1 = numberToList(897)
-    l2 = numberToList(354)
+    l1 = numberToList(input("please enter da first number list "))
+    l2 = numberToList(input("please enter da second number list "))
     if l1.size() >= l2.size():
         large = l1
         small = l2
@@ -17,14 +17,15 @@ def main():
         new.addNode(temp % 10)
         fl = temp // 10
     for j in range (i + 1, lsize):
-        print (j)
+        print(j)
         temp = large.find(j) + fl
         new.addNode(temp % 10)
         fl = temp // 10
     if fl:
         new.addNode(1)
-    print (new)
+    print(new)
 
 
 if __name__ == "__main__":
     main()
+

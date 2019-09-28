@@ -80,18 +80,19 @@ class MyList:
         else:
             return out
 
-def numberToList(number=0):
+def numberToList(number='0'):
     a = MyList()
-    if number == 0:
-        a.addNode(0)
-    while number:
-        a.addNode(number % 10)
-        number //= 10
+    for digit in reversed(number):
+        if digit >= '0' and digit <= '9':
+            a.addNode(int(digit))
+        else:
+            raise TypeError("Value must be Integer")
     return a
 
 def main():
-    a = numberToList(9876)
-    print (a)
+    a = numberToList(input("please enter ur number: "))
+    print(a)
+
 
 if __name__ == "__main__":
     main()
